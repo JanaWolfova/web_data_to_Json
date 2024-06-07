@@ -1,0 +1,22 @@
+1. Načtení dat z formuláře HTML
+    Uživatel otevře webový prohlížeč a zadá URL http://127.0.0.1:5000/.
+    Flask server přijme požadavek na URL /.
+    Flask najde funkci index díky dekorátoru @app.route('/').
+    Flask vykoná funkci index.
+    Funkce index vrátí HTML stránku index.html, která se zobrazí uživateli v prohlížeči.
+
+2. Vyhledání na Googlu
+    Na základě zadaného klíčového slova provede aplikace vyhledávání na Googlu.
+    Použije se knihovna requests k odeslání HTTP požadavku na Google.
+
+3 Zpracování výsledků vyhledávání
+    Odpověď od Googlu obsahuje HTML stránku s výsledky vyhledávání.
+    Použije se knihovna BeautifulSoup k extrakci potřebných informací (titulek, odkaz, úryvek textu).
+
+4. formátování dat
+    beautifulsoup rozparsuje text na titulek a úryvek z textu a vypíše 
+   výsledek  na další stránku (results.html)
+   
+
+Uložení dat do JSON souboru
+Zobrazení výsledků na webové stránce
