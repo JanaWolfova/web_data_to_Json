@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template  
 from googleapiclient.discovery import build  
 import json  
+import os
 
 app = Flask(__name__)  # Inicializace Flask aplikace
 
@@ -49,6 +50,8 @@ def search():
     processed_results = process_results(results)  # zpracuje výsledky vyhledávání
     save_to_json(processed_results)  # uloží zpracované výsledky do JSON souboru
     return "Výsledky vyhledávání byly uloženy do souboru results.json."  # zpráva o úspěšném uložení
-
+port = int(os.environ.get("PORT", 5000))
 if __name__ == "__main__":
-    app.run(debug=True)  # Spuštění Flask aplikace v debug režimu
+    
+
+    app.run(host='0.0.0.0', port=port)
