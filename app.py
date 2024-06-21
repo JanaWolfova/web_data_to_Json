@@ -2,13 +2,19 @@ from flask import Flask, request, render_template
 from googleapiclient.discovery import build  
 import json  
 import os
+from dotenv import load_dotenv
+
+# Načíst proměnné prostředí ze souboru .env
+load_dotenv()
+
+# Získat API klíč a CSE ID z proměnných prostředí
+my_api_key = os.getenv('API_KEY')
+my_cse_id = os.getenv('CSE_ID')
 
 app = Flask(__name__)  # Inicializace Flask aplikace
 
 
-# Definice API klíče a ID vlastního Google Custom Search Engine
-my_api_key = "AIzaSyCR7yXzVtYI9GOeD83dMWJ6updwOjQGQ3g"
-my_cse_id = "b08037066865848f7"
+
 
 def google_search(query):
     """
